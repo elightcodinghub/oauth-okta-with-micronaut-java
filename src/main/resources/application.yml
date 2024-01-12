@@ -8,10 +8,10 @@ micronaut:
     oauth2:
       clients:
         okta:
-          client-secret: 'Yrve4xzm-8T1qaDWgtO_wBOattUa3fiKfn7HyF0s_MUNJVvaLWab-V9Zon-RUn4c'
-          client-id: '0oab5yaayrVi7DjKg5d7'
+          client-secret: '*********************************************************'
+          client-id: '**************'
           openid:
-            issuer: 'https://dev-70842989.okta.com/oauth2/default'
+            issuer: 'https://dev-12345.okta.com/oauth2/default'
     endpoints:
       logout:
         get-allowed: true
