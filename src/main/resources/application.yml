@@ -1,0 +1,37 @@
+micronaut:
+  server:
+    port: 8080
+  application:
+    name: oauth
+  security:
+    authentication: idtoken
+    oauth2:
+      clients:
+        okta:
+          client-secret: 'Yrve4xzm-8T1qaDWgtO_wBOattUa3fiKfn7HyF0s_MUNJVvaLWab-V9Zon-RUn4c'
+          client-id: '0oab5yaayrVi7DjKg5d7'
+          openid:
+            issuer: 'https://dev-70842989.okta.com/oauth2/default'
+    endpoints:
+      logout:
+        get-allowed: true
+    intercept-url-map:
+      - pattern: /swagger/**
+        access:
+          - isAnonymous()
+      - pattern: /swagger-ui/**
+        access:
+          - isAnonymous()
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+
+netty:
+  default:
+    allocator:
+      max-order: 3
